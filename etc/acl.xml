@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Technogex Customer attribute Access Control list.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Technogex_CustomerAttribute::core" title="Technogex Extension" translate="title" sortOrder="600">
+                        <resource id="Technogex_CustomerAttribute::customer_attributes" title="Customer Attributes" sortOrder="1" >
+                            <resource id="Technogex_CustomerAttribute::save" title="Save Attribute" sortOrder="2" />
+                            <resource id="Technogex_CustomerAttribute::attribute_delete" title="Delete Attribute" sortOrder="3" />
+                        </resource>
+                    </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

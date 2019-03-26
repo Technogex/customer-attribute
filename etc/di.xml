@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Technogex Customer attribute.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <virtualType name="CustomerAttributeGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="filterPool" xsi:type="object" shared="false">CustomerAttributeGirdFilterPool</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="CustomerAttributeGirdFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+                <item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="customer_attribute_listing_data_source" xsi:type="string">Technogex\CustomerAttribute\Model\ResourceModel\Attribute\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Technogex\CustomerAttribute\Model\ResourceModel\Attribute\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">customer_eav_attribute</argument>
+            <argument name="resourceModel" xsi:type="string">Magento\Customer\Model\ResourceModel\Attribute</argument>
+        </arguments>
+    </type>
+</config>

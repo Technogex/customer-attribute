@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Technogex Customer attribute admin menu.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Technogex_CustomerAttribute::core" title="Technogex" translate="title" module="Technogex_CustomerAttribute" parent="Magento_Backend::stores"   sortOrder="100"  resource="Technogex_CustomerAttribute::core"/>
+        <add id="Technogex_CustomerAttribute::customer_attributes" title="Customer Attribute" module="Technogex_CustomerAttribute" sortOrder="70" parent="Technogex_CustomerAttribute::core" action="customerattribute/attribute" resource="Technogex_CustomerAttribute::customer_attributes"/>
+    </menu>
+</config>

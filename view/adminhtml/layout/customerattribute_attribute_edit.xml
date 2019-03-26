@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Edit attribute layout.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Technogex\CustomerAttribute\Block\Adminhtml\Attribute\Edit" name="customerattribute_attribute_edit"/>
+        </referenceContainer>
+         <referenceContainer name="left">
+             <block class="Technogex\CustomerAttribute\Block\Adminhtml\Attribute\Edit\Tabs" name="attribute_edit_tabs">
+                 <container label="Main" name="main">
+                     <block class="Technogex\CustomerAttribute\Block\Adminhtml\Attribute\Edit\Tab\Main" as="base"/>
+                     <block class="Technogex\CustomerAttribute\Block\Adminhtml\Attribute\Edit\Options\Options" as="advanced"/>
+                     <block class="Technogex\CustomerAttribute\Block\Adminhtml\Attribute\Edit\Tab\Advanced" as="options"/>
+                 </container>
+                 <block class="Technogex\CustomerAttribute\Block\Adminhtml\Attribute\Edit\Options\Labels" as="labels"/>
+                 <block class="Technogex\CustomerAttribute\Block\Adminhtml\Attribute\Edit\Tab\Front" as="front"/>
+             </block>
+         </referenceContainer>
+        <referenceContainer name="js">
+             <block class="Magento\Backend\Block\Template" name="attribute_edit_js" template="Technogex_CustomerAttribute::customer/attribute/js.phtml"/>
+        </referenceContainer>
+    </body>
+</page>
